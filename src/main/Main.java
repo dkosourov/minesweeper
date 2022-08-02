@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static final char MINE_CELL = 'x';
-    public static final char EMPTY_CELL = '-';
-    static final Random random = new Random();
-    static char[][] minefield;
-    static int width = 0;
-    static int height = 0;
-    static int minesAmount = 0;
+    private static final char MINE_CELL = 'x';
+    private static final char EMPTY_CELL = '-';
+    private static final Random RANDOM = new Random();
+    private static char[][] minefield;
+    private static int width = 0;
+    private static int height = 0;
+    private static int minesAmount = 0;
 
     public static void main(String[] args) {
         try {
@@ -89,8 +89,8 @@ public class Main {
     private static void shuffle(char[][] a) {
         for (int i = a.length - 1; i > 0; i--) {
             for (int j = a[i].length - 1; j > 0; j--) {
-                int m = random.nextInt(i + 1);
-                int n = random.nextInt(j + 1);
+                int m = RANDOM.nextInt(i + 1);
+                int n = RANDOM.nextInt(j + 1);
 
                 char temp = a[i][j];
                 a[i][j] = a[m][n];
